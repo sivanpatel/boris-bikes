@@ -1,12 +1,15 @@
 require_relative 'bike'
 
 class DockingStation
+
   def release_bike
-    fail 'No bikes available' # => Added this line to create a Bike class when we call
+    fail 'No bikes available' unless @bike
+    @bike
   end
 
-  def dock bike
-    
+  def dock bike    
+    @bike = bike
   end
+# COME BACK TO THIS PART AND UNDERSTAND THE @bike IF POSSIBLE
 
 end

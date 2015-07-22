@@ -6,17 +6,19 @@ describe DockingStation do
     expect(subject).to respond_to :release_bike
   end
 
-  it 'should dock a bike' do
-      is_expected.to respond_to(:dock).with(1).argument
+  it 'can I dock a bike' do
+      expect(subject).to respond_to(:dock).with(1).arguments
   end
-#      expect(subject).to respond_to(:dock).with(1).arguments
-
-#  it { is_expected.to respond_to(:dock).with(1).argument}
-
 
   it 'gets a bike that is working' do
     instance = Bike.new
     expect(instance).to be_working
+  end
+
+  it 'releases working bikes' do
+    subject.dock Bike.new
+    bike = subject.release_bike
+    expect(bike).to be_working
   end
 
   describe '#release_bike' do
