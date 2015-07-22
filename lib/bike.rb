@@ -3,5 +3,3 @@ class Bike
     true
   end
 end
-
-a
